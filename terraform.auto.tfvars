@@ -1,23 +1,23 @@
 # A unique bucket name
-codepipeline_bucket_name = "codepipeline-bucket-test-20220423-ebuka"
+codepipeline_bucket_name = "codepipeline-ab2d-impl-libs"
 
 # A project name for your CodePipeline
-codepipeline_name = "tf-pipeline"
+codepipeline_name = "AB2D-LIBS"
 
 # A project name for your CodeBuild
-codebuild_project_name = "tf-build"
+codebuild_project_name = "ab2d-libs-codebuild"
 
 # List of repositories.
 # repo is the repo name together with the user or organisation name
 # slug is a short name to be used along with CodePipeline
 actions = [
   {
-    repo        = "hasan-tayyar-besik/test-netlify",
-    slug        = "repo1",
+    repo        = "sb-ebukaanene/SpringChallenge2022",
+    slug        = "contract",
     main_branch = "main"
   },
-  { repo        = "hasan-tayyar-besik/deploy-static-websites-terraform",
-    slug        = "repo2",
+  { repo        = "sb-ebukaanene/simple-java-maven-app",
+    slug        = "aggregator",
     main_branch = "main"
   }
 ]
