@@ -61,7 +61,7 @@ resource "aws_codestarconnections_connection" "github_connection" {
 }
 
 resource "aws_s3_bucket" "codepipeline_bucket" {
-  bucket = var.codepipeline_bucket_name
+  bucket = "${var.codepipeline_bucket_name}-${var.env}"
 }
 
 resource "aws_s3_bucket_acl" "codepipeline_bucket_acl" {
