@@ -142,14 +142,9 @@ resource "aws_codebuild_project" "build" {
                       # - command
                   pre_build:
                     commands:
-                      - pwd
-                      - ls -ltr
                       - sudo su -
-                      #- cd /opt
                       - wget https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz 
-                      - ls -ltr
                       - tar zxf apache-maven-3.8.5-bin.tar.gz
-                      - ls -ltr
                       - cd apache-maven-3.8.5
                       - cd bin
                       - export M2_HOME=/opt/apache-maven-3.8.5
@@ -166,13 +161,9 @@ resource "aws_codebuild_project" "build" {
                       - unzip sonar-scanner-cli-3.3.0.1492-linux.zip
                       - export PATH=$PATH:./sonar-scanner-3.3.0.1492-linux/bin/
                       - echo "scan command here" 
-                      - ls -ltr
-                      - pwd
-                      - ls -ltr
                       - cd ../..
                       - mvn clean verify sonar:sonar -Dsonar.projectKey=ebuka-project-key -Dsonar.host.url=http://3.85.193.21:9000 -Dsonar.login=1458a3c2b1d119b0c86dfd947ffd197497c2f120
                       - echo "more commands"
-                      - ls -al
                       - for dir in ${join(" ",[for v in var.actions:  v.slug ])}; do
                           VAR=CODEBUILD_SRC_DIR_$dir;
                           DIR=$(eval "echo \"\$$VAR\"");
