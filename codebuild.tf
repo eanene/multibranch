@@ -196,11 +196,11 @@ resource "aws_codebuild_project" "build" {
                     artifact1:
                       base-directory: $CODEBUILD_SRC_DIR
                       files:
-                        - repo1_artifact
+                        - contract_artifact
                     artifact2:
                       base-directory: $CODEBUILD_SRC_DIR_source2
                       files:
-                        - repo2_artifact
+                        - aggregator_artifact
                 #cache:
                   #paths:
                     # - paths
@@ -209,6 +209,6 @@ resource "aws_codebuild_project" "build" {
   # source_version = "master"
 
   tags = {
-    Environment = "Test"
+    Environment = var.env
   }
 }
