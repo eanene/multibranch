@@ -1,5 +1,5 @@
 # A unique bucket name
-codepipeline_bucket_name = "codepipeline-ab2d-impl-libs"
+codepipeline_bucket_name = "codepipeline-libs"
 
 # A project name for your CodePipeline
 codepipeline_name = "AB2D-LIBS"
